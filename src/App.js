@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import DateToday from "./components/DateToday";
+import Quote from "./components/Quote";
+import Time from "./components/Time";
+import Weather from "./components/Weather";
 
-const hello = () => {
+
+const App = () => {
   return (
-    <div>hello</div>
-  )
-}
+    <div>
+      <Weather />
+      <Time />
+      <DateToday/>
+      <Quote/>
+    </div>
+  );
+};
 
-export default hello
+export default App;
