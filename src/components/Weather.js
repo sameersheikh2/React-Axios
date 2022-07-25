@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { City, Temp, WeatherContainer } from './WeatherStyles';
  
-const url = "https://api.openweathermap.org/data/2.5/weather?q=Chittaurgarh,IN&appid=7df4d87d3e0f46e0bbb9421158a9c1ec"
+const url = "https://api.openweathermap.org/data/2.5/weather?q=Chittaurgarh,IN&appid=7df4d87d3e0f46e0bbb9421158a9c1ec&units=metric"
 
 const Weather = () => {
  const [data , setData] = useState();
@@ -13,13 +14,17 @@ const Weather = () => {
         console.log(err)
  })
  }, [])
+ console.log(data)
  
  if(!data) return null;
 
   return (
-    <div>
-        {data.main.temp.toFixed(0)}
-    </div>
+    <WeatherContainer>
+        <Temp>
+          {data.main.temp.toFixed(0)}&#176;C
+          </Temp>
+          <City>{data.name}, RJ</City>
+    </WeatherContainer>
   )
 }
 
