@@ -19,7 +19,7 @@ const Quote = () => {
 
   return <div>
     <p>{data.quotes[0].text}</p>
-    <p>{data.quotes[0].author}</p>
+    <p>-{data.quotes[0].author}</p>
   </div>;
 };
 
